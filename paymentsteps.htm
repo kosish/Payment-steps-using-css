@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Payment steps using css only </title>
+</head>
+<style type="text/css">
+	
+/*Payment steps start*/
+.payment-steps {
+    background: #e1e1e1;
+    padding: 20px;
+}
+.payment-table-group {
+    display: table;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin:0 auto;
+
+}
+.payment-row-group {
+    display: table-row;
+}
+.payment-row-group:after {
+    content: "";
+    width: 100%;
+    background: #b9b9b9;
+    position: absolute;
+    padding: 2px;
+    z-index: 1;
+    left: 0;
+    top: 23px;
+}
+.payment-column {
+    display: table-cell;
+}
+
+.payment-table-group span.label {
+    display: block;
+    font-size: 27px;
+    font-weight: 900;
+    color:#414141;
+    margin-top: 10px;
+}
+
+/* COMMON RADIO AND CHECKBOX STYLES  */
+
+.payment-table-group input[type=radio],
+.payment-table-group input[type=checkbox]{
+    /* hide original inputs */
+    visibility: hidden;
+    position: absolute;
+}
+.payment-table-group input[type=radio] + label,
+.payment-table-group input[type=checkbox] + label{
+    background: #fff;
+    border-radius: 50%;
+    border: 4px solid #0699c4;
+    cursor: pointer;
+    /* height: 45px; */
+    padding: 12px;
+    position: relative;
+    /* width: 45px; */
+    z-index: 2;
+    display: inline-block;
+}
+.payment-table-group input[type=radio] + label:before,
+.payment-table-group input[type=checkbox] + label:before{
+    height: 8px;
+    /* margin-right: 4px; */
+    content: " ";
+    display: inline-block;
+    vertical-align: top;
+    transition: 0.3s;
+    border: 4px solid #0699c4;
+    border-radius: 10px;
+    /* box-shadow: inset 0 -3px 6px #e4e4e4; */
+    transition: 0.3s;
+    background: #0699c4;
+    /* padding: 5px; */
+}
+
+/* CUSTOM RADIO AND CHECKBOX STYLES */
+/* DEFAULT */
+.payment-table-group input[type=radio] + label:before{
+    border-radius: 50%;
+    width: 8px;
+}
+.payment-table-group input[type=checkbox] + label:before{
+    border-radius:2px;
+    width:26px;
+}
+/* CHECKED */
+.payment-table-group input[type=radio]:checked + label:before,
+.payment-table-group input[type=checkbox]:checked + label:before{
+    /*    box-shadow: inset 0 -1px 3px #e4e4e4, inset 0 0 1px #222, inset 0 0 0 3px gold;*/
+    background: #4eb849;
+    border-color: #4eb849
+}
+/*Payment steps end*/
+
+</style>
+<body>
+    <section class="section payment-steps">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <header class="entry-header screen-reader-text">
+                                            <h2 class="entry-title"> Order process</h2>
+                                        </header>
+                                        <div class="payment-table-group">
+                                            <div class="payment-row-group">
+                                                <div class="payment-column">
+                                                    <input type="radio" name="r" id="r1"><label for="r1"></label>
+                                                    <span class="label"> Review</span>
+                                                </div><!-- .payment-column -->
+
+                                                <div class="payment-column">
+                                                    <input type="radio" name="r" id="r2"><label for="r2"></label>
+                                                    <span class="label"> Payment</span>
+                                                </div><!-- .payment-column -->
+
+                                                <div class="payment-column">
+                                                    <input type="radio" name="r" id="r3"><label for="r3"></label>
+                                                    <span class="label"> Message & Monthly</span>
+                                                </div><!-- .payment-column -->
+
+                                                <div class="payment-column">
+                                                    <input type="radio" name="r" id="r4"><label for="r4"></label>
+                                                    <span class="label"> Confirmation</span>
+                                                </div><!-- .payment-column -->
+                                            </div><!-- .payment-row-group -->
+                                        </div><!-- .payment-table-group -->
+                                    </div><!-- .col -->
+                                </div><!-- .row -->
+                            </div><!-- .container -->
+                        </section><!-- .payment-steps -->
+</body>
+</html>
